@@ -12,6 +12,8 @@ struct STUDENT_DATA {
 };
 
 int main() {
+
+//Step #3: Initial Source Code
     // Opening the file StudentData.txt
     ifstream file("StudentData.txt");
     if (!file.is_open()) {
@@ -30,6 +32,19 @@ int main() {
             STUDENT_DATA student = { First_Name, Last_Name};
             Students.push_back(student);
         }
+    }
+
+//Step #4: Adding in some _DEBUG functionality
+    #ifdef _DEBUG
+        cout << "DEBUG MODE: NAMES OF THE STUDENTS\n";
+        for (const auto& student : Students) {
+            cout << "First Name: " << student.First_Name << ", Last Name: " << student.Last_Name << endl;
+        }
+    #endif
+
+    //Loop to print the names of the student and mking sure that the txt file is opened
+    for (const auto& student : Students) {
+        cout << "First Name: " << student.First_Name << ", Last Name: " << student.Last_Name << endl;
     }
 
     return 0;
